@@ -161,4 +161,4 @@ html {
 `
 
 
-export default GlobalStyles
+export default GlobalStyles;
