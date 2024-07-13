@@ -1,16 +1,16 @@
 {
-    "categorias": [
+    "categories": [
         {
             "id": "Lofi",
             "title" : "Lofi"
         },
         {
-            "id": "Classical",
+            "id": "Clásica",
             "title" : "Clásica"
         },
         {
-            "id": "Ambient Nature Sounds",
-            "title" : "Sonidos Ambientales de la Naturaleza"
+            "id": "SonidosAmbientales",
+            "title" : "Sonidos Ambientales"
         }
     ],
     "videos": [
@@ -65,7 +65,7 @@
         {
             "id": 7,
             "title": "Sonidos de Lluvia y Truenos: Sonidos de la Naturaleza para Dormir, Relajarse, Estudiar",
-            "category": "Sonidos Ambientales de la Naturaleza",
+            "category": "Sonidos Ambientales",
             "image": "https://i.ytimg.com/vi/qJvHh-Nk_Ew/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCyhwyjHNd3uxPsTHhBQSkXopSRaw",
             "video": "https://www.youtube.com/watch?v=qJvHh-Nk_Ew",
             "description": "En este video podrás disfrutar de ocho horas de sonido de lluvia relajante con truenos suaves, perfecto para dormir y relajarte."
@@ -73,7 +73,7 @@
         {
             "id": 8,
             "title": "Cozy Tranquil Beach House - Peaceful Beach Waves & Soothing Fireplace",
-            "category": "Sonidos Ambientales de la Naturaleza",
+            "category": "Sonidos Ambientales",
             "image": "https://i.ytimg.com/vi/3xT0mfQCf5Q/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBV-9-ClRF6WVI7L99XF7rITJjdRQ",
             "video": "https://www.youtube.com/watch?v=3xT0mfQCf5Q",
             "description": "Imagine yourself in a cozy coffee shop by the coast, the rhythmic waves lapping at the shore and the gentle patter of rain providing a calming background."
@@ -81,7 +81,7 @@
         {
             "id": 9,
             "title": "Lakeside Ambience - Crackling Fire, Crickets, Winds and Distant Thunder Sounds to Sleep/Rest/Relax",
-            "category": "Sonidos Ambientales de la Naturaleza",
+            "category": "Sonidos Ambientales",
             "image": "https://i.ytimg.com/vi/n9oCw0w5yPY/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLC_Cv_ZQBW1Ie_fmGMeXxGGBRpKGg",
             "video": "https://www.youtube.com/watch?v=n9oCw0w5yPY",
             "description": "Hope you have a pleasant time. Heal your mind with Golden Hour."

@@ -1,3 +1,4 @@
+import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import logo from "../../assets/logo.png"
@@ -7,7 +8,7 @@ const HeaderContainer = styled.header`
    display: flex;
    justify-content: space-between;
    align-items: center;
-   background-image: radial-gradient(circle, #1fe7bf, #ffffff);
+   background-image: radial-gradient(circle, #dabe23, #bfb5b5);
    img{
     width: 100%;
     height: 100%;
@@ -47,7 +48,7 @@ const Header = () => {
             </Link>
             <Navigation>
                 <ul >
-                    <NavLink ><Link to="/home" >Home</Link></NavLink>
+                    <NavLink ><Link to="/" >Home</Link></NavLink>
                     <NavLink ><Link to="/" >Nuevo Video</Link></NavLink>
                 </ul>
             </Navigation>
