@@ -1,20 +1,26 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from "./Pages/Home/Home"
-import BasePage from "./Pages/BasePage/BasePage"
-import NewVideo from "./Pages/NewVideo/NewVideo"
-import NotFound from "./Pages/NotFound/NotFound"
+import Home from "./Pages/Home"
+import NewVideo from "./Pages/NewVideo"
+import NotFound from "./Pages/NotFound"
+import Header from "./Components/Header";
 
 function AppRoutes() {
+    
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<BasePage />} >
-                    <Route index element={<Home />} />
-                    <Route path="/new-video" element={<NewVideo />} />
-                    <Route path="*" element={<NotFound />}></Route>
-                </Route>
-            </Routes>
+            <div>
+                <Header />
+                <div>
+                    <Routes>
+                        <Route index element={<Home />} />
+                        <Route path="/new-video" element={<NewVideo />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </div>
+              {/*   <Footer /> */}
+            </div>
         </BrowserRouter>
+
     );
 }
 

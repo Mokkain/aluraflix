@@ -1,24 +1,19 @@
-import { useEffect, useState } from "react";
+import axios from "axios";
 
-const api = () => {
+const api = axios.create({
+    baseURL: "http://localhost:3000",
+});
 
-    const [videos, setVideos] = useState([]);
+export const getVideos = async () => {
+    try {
+        const response = await api.get("/videos");
+        console.log(response);
+        return response.data;
 
-    useEffect(() => {
-        const getVideos = async () => {
-            try {
-                const response = await fetch('http://localhost:3000/videos');
-                const data = await response.json();
-                console.log(data);
-                setVideos(data)
-            } catch (error) {
-                console.error("Error al buscar videos", error);
-                throw error;
-            }
-        }
-        getVideos()
-    }, [])
-
-}
+    } catch (error) {
+        console.log("Error al mostrar la lista de videos", error);
+        throw error;
+    }
+};
 
 export default api;
