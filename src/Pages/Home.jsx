@@ -3,7 +3,7 @@ import Banner from "../Components/Banner";
 import { getVideos } from "../Services/api.jsx";
 import { getCategories } from "../Services/apiCategories.jsx";
 import styled from "styled-components";
-import CourseTitle from "../Components/CourseTitle/index.jsx";
+import CatTitle from "../Components/CatTitle/index.jsx";
 
 const SectionStyles = styled.section`
     width: auto;
@@ -60,6 +60,7 @@ const Home = () => {
     const [videos, setVideos] = useState(null);
     const [categories, setCategories] = useState(null);
     const [featuredVideo, setFeaturedVideo] = useState(null);
+    const [videoSelected, setVideoSelected] = useState(false);
     const bannerRef = useRef(null);
 
     useEffect(() => {
@@ -81,7 +82,9 @@ const Home = () => {
     if (!videos || !categories) return <p>Cargando...</p>;
 
     // Handle clicking on thumbnail to move to banner
-    const handleClickThumbnail = () => {
+    const handleClickThumbnail = (video) => {
+        setFeaturedVideo(video);
+        setVideoSelected(true);
         // Obtain the position of the banner with respect to the window
         const bannerPosition = bannerRef.current.offsetTop;
         // Scroll to the banner position smoothly
@@ -104,19 +107,20 @@ const Home = () => {
             {featuredVideo && (
                 <Banner
                     ref={bannerRef} 
-                    title={featuredVideo.title}
+                    title={videoSelected ? featuredVideo.title : ""}
                     category={featuredVideo.category}
                     image={featuredVideo.image}
                     video={featuredVideo.video}
+                    description={videoSelected ? featuredVideo.description : ""}
                 />
             )}
             <div>
                 <SectionStyles>
                     {videosByCategory.map((category) => (
                         <div key={category.id}>
-                            <CourseTitle category={category.title}>
+                            <CatTitle category={category.title}>
                                 {category.title}
-                            </CourseTitle>
+                            </CatTitle>
                             <CourseContainer as="ul">
                                 {category.videos.map((video) => (
                                     <VideoItem key={video.id}>
@@ -125,10 +129,7 @@ const Home = () => {
                                         <Thumbnail
                                             src={video.image}
                                             alt={video.title}
-                                            onClick={() => {
-                                                handleClickThumbnail();
-                                                setFeaturedVideo(video);
-                                            }}
+                                            onClick={() => handleClickThumbnail(video)}
                                         />
                                         {/*  <a
                                             href={video.video}

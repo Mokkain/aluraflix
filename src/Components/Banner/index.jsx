@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import React from "react";
 import banner from "../../assets/banner.jpg"
-import CourseTitle from "../CourseTitle";
+import CatTitle from "../CatTitle";
 
 const FigureEstilizada = styled.figure`
     background-image: ${props => `url(${props.$backgroundImage})`};
@@ -15,6 +15,7 @@ const FigureEstilizada = styled.figure`
     background-size: cover;
     position:relative;
     opacity: 0.9;
+    box-shadow: 1px 2px 10px 2px rgba(255, 255, 255, 0.5);
 `;
 
 const Overlay = styled.div`
@@ -72,19 +73,17 @@ const DescriptionStyles = styled.p`
   filter: drop-shadow(4px 3px 6px rgb(0, 0, 0));
 `;
 
-const Banner = React.forwardRef(({title, category, image, video }, ref) => {
+const Banner = React.forwardRef(({title, category, image, video, description}, ref) => {
 
     return (
         <FigureEstilizada ref={ref} $backgroundImage={banner}>
             <Overlay>
                 <DescriptionContainer>
-                    <CourseTitle category={category}>{category}</CourseTitle>
+                    <CatTitle category={category}>{category}</CatTitle>
                     <div>
-                        <DescriptionTitle>Challenge React</DescriptionTitle>
+                        <DescriptionTitle>{title || "Challenge React"}</DescriptionTitle>
                         <DescriptionStyles>
-                            Este challenge es una forma de aprendizaje. Es un mecanismo donde
-                            podrás comprometerte en la resolución de un problema para poder
-                            aplicar todos los conocimientos adquiridos en la formación React.
+                            {description || "Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React."}
                         </DescriptionStyles>
                     </div>
                 </DescriptionContainer>

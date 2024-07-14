@@ -20,9 +20,9 @@ const categoryColors = {
     "Sonidos Ambientales": "#db3b06",
 };
 
-const CourseTitle = ({children, category }) => {
+const CatTitle = ({children, category }) => {
     const color = categoryColors[category] || "#1b091d"; // Default color if category not found
     return <TitleStyles $color={color}>{children}</TitleStyles>;
 };
 
-export default CourseTitle;
+export default CatTitle;

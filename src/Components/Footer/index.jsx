@@ -8,6 +8,7 @@ const FooterStyles = styled.footer`
     justify-content: space-between;
     align-items: center;
     background-image: linear-gradient(to right bottom, #26158a, #6db4d0);
+    box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.5);
     img{
         width: 18%;
         height: 18%;

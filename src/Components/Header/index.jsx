@@ -49,7 +49,7 @@ const Header = () => {
             <Navigation>
                 <ul >
                     <NavLink ><Link to="/" >Home</Link></NavLink>
-                    <NavLink ><Link to="/" >Nuevo Video</Link></NavLink>
+                    <NavLink ><Link to="/NewVideo" >Nuevo Video</Link></NavLink>
                 </ul>
             </Navigation>
         </HeaderContainer>
