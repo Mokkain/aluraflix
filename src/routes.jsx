@@ -3,9 +3,10 @@ import Home from "./Pages/Home"
 import NewVideo from "./Pages/NewVideo"
 import NotFound from "./Pages/NotFound"
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 function AppRoutes() {
-    
+
     return (
         <BrowserRouter>
             <div>
@@ -17,7 +18,7 @@ function AppRoutes() {
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </div>
-              {/*   <Footer /> */}
+                <Footer />
             </div>
         </BrowserRouter>
 

@@ -7,7 +7,6 @@ import CourseTitle from "../Components/CourseTitle/index.jsx";
 
 const SectionStyles = styled.section`
     width: auto;
-    background-color: #e4d8d8;
     padding: 40px 27px;
     display: flex;
     flex-direction: column;
