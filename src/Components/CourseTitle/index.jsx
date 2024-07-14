@@ -14,7 +14,14 @@ const TitleStyles = styled.h2`
     background-color: ${(props) => props.$color};
 `;
 
-const CourseTitle = ({children, color }) => {
+const categoryColors = {
+    "Lofi": "#740d7f",
+    "Clásica": "#0b1182",
+    "Sonidos Ambientales": "#db3b06",
+};
+
+const CourseTitle = ({children, category }) => {
+    const color = categoryColors[category] || "#1b091d"; // Default color if category not found
     return <TitleStyles $color={color}>{children}</TitleStyles>;
 };
 

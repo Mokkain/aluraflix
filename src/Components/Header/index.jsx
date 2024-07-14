@@ -8,12 +8,12 @@ const HeaderContainer = styled.header`
    display: flex;
    justify-content: space-between;
    align-items: center;
-   background-image: radial-gradient(circle, #dabe23, #bfb5b5);
+   background-image: linear-gradient(to right bottom, #26158a, #6db4d0);
    img{
     width: 100%;
     height: 100%;
     margin: 0 30px;
-    filter: drop-shadow(4px 3px 5px rgb(255, 255, 255));
+    filter: drop-shadow(4px 3px 5px rgb(0, 0, 0));
    }
 `
 

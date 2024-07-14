@@ -1,4 +1,4 @@
-import { styled } from "styled-components"
+import styled from "styled-components"
 import React from "react";
 import banner from "../../assets/banner.jpg"
 import CourseTitle from "../CourseTitle";
@@ -21,8 +21,8 @@ const Overlay = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 90%;
     background-color: rgba(0, 0, 0, 0.3); 
     display: flex;
     flex-direction: column;
@@ -46,44 +46,39 @@ const Thumbnail = styled.img`
 `;
 
 const DescriptionContainer = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  gap: 16px;
-  color: white;
-  padding-bottom: 40px;
-  margin-left: 50px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 16px;
+    color: white;
+    padding-bottom: 40px;
+    margin-left: 50px;
 `;
 
 const DescriptionTitle = styled.h3`
   font-size: 46px;
   font-weight: 600;
   text-align: start;
+  filter: drop-shadow(4px 3px 6px rgb(0, 0, 0));
 `;
 
 const DescriptionStyles = styled.p`
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 500;
   text-align: justify;
+  line-height: 1.5;
+  filter: drop-shadow(4px 3px 6px rgb(0, 0, 0));
 `;
 
-const Banner = ({ title, category, image, video }) => {
-
-    const categoryColors = {
-        "Lofi": "#740d7f",
-        "Clásica": "#0b1182",
-        "Sonidos Ambientales": "#db3b06",
-      };
-    
-    const categoryColor = categoryColors[category];
+const Banner = React.forwardRef(({title, category, image, video }, ref) => {
 
     return (
-        <FigureEstilizada $backgroundImage={banner}>
+        <FigureEstilizada ref={ref} $backgroundImage={banner}>
             <Overlay>
                 <DescriptionContainer>
-                    <CourseTitle color={categoryColor}>{category}</CourseTitle>
+                    <CourseTitle category={category}>{category}</CourseTitle>
                     <div>
                         <DescriptionTitle>Challenge React</DescriptionTitle>
                         <DescriptionStyles>
@@ -97,7 +92,8 @@ const Banner = ({ title, category, image, video }) => {
             <ThumbnailLink href={video} target="_blank" rel="noopener noreferrer">
                 <Thumbnail src={image} alt={title} />
             </ThumbnailLink>
-        </FigureEstilizada>)
-}
+        </FigureEstilizada>
+        );
+});
 
-export default Banner
+export default Banner;
