@@ -43,7 +43,7 @@ const Thumbnail = styled.img`
     height: 250px;
     border-radius: 10px;
     margin-right: 50px;
-    filter: drop-shadow(4px 3px 5px rgb(255, 255, 255));
+    filter: drop-shadow(6px 4px 6px rgb(255, 255, 255));
 `;
 
 const DescriptionContainer = styled.div`

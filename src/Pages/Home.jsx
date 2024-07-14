@@ -4,6 +4,9 @@ import { getVideos } from "../Services/api.jsx";
 import { getCategories } from "../Services/apiCategories.jsx";
 import styled from "styled-components";
 import CatTitle from "../Components/CatTitle/index.jsx";
+import {categoryColors} from "../Components/CatTitle/index.jsx";
+import editIcon from "../assets/editar.png"
+import deleteIcon from "../assets/borrar.png"
 
 const SectionStyles = styled.section`
     width: auto;
@@ -20,39 +23,64 @@ const CourseContainer = styled.div`
     gap: 30px;
     padding-bottom: 12px;
     scrollbar-width: thick;
-    scrollbar-color: #e4e0e0 #e7800a;
-
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    ${(props) => props.$category && `
+         scrollbar-color: #e4e0e0 ${props.$category};
+    `}
 `;
 
 const VideoItem = styled.li`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 400px; 
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    ${(props) => props.$category && `
+        box-shadow: -6px 8px 9px ${props.$category};
+    `}
 `;
 
 const VideoTitle = styled.h3`
     font-size: 24px; 
     text-align: center;
+    margin: 16px 0;
 `;
 
-/* const VideoDescription = styled.p`
-    font-size: 16px; 
-    text-align: center;
-`; */
-
 const Thumbnail = styled.img`
-    width: 400px; 
-    height: 250px;
-    border-radius: 10px;
-    filter: drop-shadow(4px 3px 5px rgb(255, 255, 255));
+    width: 100%; 
+    height: auto;
     cursor: pointer;
+`;
+
+const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+`;
+
+const Button = styled.button`
+    padding: 9px 40px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: ${props => (props.edit ? "#3514a3" : "#b91690")};
+    background-image: url(${props => (props.edit ? editIcon : deleteIcon)});
+    background-repeat: no-repeat;
+    background-position: 12px center;;
+    background-size: 27px 27px; 
+    text-indent: 15px;
+    filter: drop-shadow(-2px 3px 1px rgba(0, 0, 0, 0.7));
 `;
 
 const Home = () => {
@@ -106,7 +134,7 @@ const Home = () => {
         <>
             {featuredVideo && (
                 <Banner
-                    ref={bannerRef} 
+                    ref={bannerRef}
                     title={videoSelected ? featuredVideo.title : ""}
                     category={featuredVideo.category}
                     image={featuredVideo.image}
@@ -121,16 +149,20 @@ const Home = () => {
                             <CatTitle category={category.title}>
                                 {category.title}
                             </CatTitle>
-                            <CourseContainer as="ul">
+                            <CourseContainer as="ul" $category={categoryColors[category.title]}>
                                 {category.videos.map((video) => (
-                                    <VideoItem key={video.id}>
+                                    <VideoItem key={video.id}
+                                    $category={categoryColors[category.title]}>
                                         <VideoTitle>{video.title}</VideoTitle>
-                                        {/* <VideoDescription>{video.description}</VideoDescription> */}
                                         <Thumbnail
                                             src={video.image}
                                             alt={video.title}
                                             onClick={() => handleClickThumbnail(video)}
                                         />
+                                        <ButtonContainer>
+                                            <Button >Borrar</Button>
+                                            <Button edit>Editar</Button>
+                                        </ButtonContainer>
                                         {/*  <a
                                             href={video.video}
                                             target="_blank"

@@ -23,6 +23,7 @@ const Navigation = styled.nav`
     & ul {
         list-style: none;
         display: flex;
+        filter: drop-shadow(4px 3px 4px rgba(0, 0, 0, 0.7));
     }
 `
 const NavLink = styled.li`
@@ -36,6 +37,7 @@ const NavLink = styled.li`
         padding:10px;
         margin-right: 50px;
         background-color: #3b4f8a;
+        filter: drop-shadow(4px 3px 4px rgba(0, 0, 0, 0.7));
     }
 `
 

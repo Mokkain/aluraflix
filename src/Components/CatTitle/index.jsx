@@ -11,10 +11,11 @@ const TitleStyles = styled.h2`
 	border-radius: 15px;
 	color: #ffffff;
     width: auto;
+    filter: drop-shadow(4px 3px 4px rgba(0, 0, 0, 0.737));
     background-color: ${(props) => props.$color};
 `;
 
-const categoryColors = {
+ export const categoryColors = {
     "Lofi": "#740d7f",
     "Clásica": "#0b1182",
     "Sonidos Ambientales": "#db3b06",
