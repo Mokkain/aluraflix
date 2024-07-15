@@ -4,9 +4,10 @@ import { getVideos } from "../Services/api.jsx";
 import { getCategories } from "../Services/apiCategories.jsx";
 import styled from "styled-components";
 import CatTitle from "../Components/CatTitle/index.jsx";
-import {categoryColors} from "../Components/CatTitle/index.jsx";
+import { categoryColors } from "../Components/CatTitle/index.jsx";
 import editIcon from "../assets/editar.png"
 import deleteIcon from "../assets/borrar.png"
+import Modal from "../Components/Modal/index.jsx";
 
 const SectionStyles = styled.section`
     width: auto;
@@ -90,6 +91,8 @@ const Home = () => {
     const [featuredVideo, setFeaturedVideo] = useState(null);
     const [videoSelected, setVideoSelected] = useState(false);
     const bannerRef = useRef(null);
+    const [showModal, setShowModal] = useState(false);
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -130,6 +133,15 @@ const Home = () => {
         };
     });
 
+    const openModal = () => setShowModal(true);
+    const closeModal = () => setShowModal(false);
+
+    const handleFormSubmit = (formData) => {
+        console.log("Envio de información del formulario: ", formData);
+        // Aquí puedes manejar la lógica para guardar la data del formulario
+    };
+
+
     return (
         <>
             {featuredVideo && (
@@ -152,7 +164,7 @@ const Home = () => {
                             <CourseContainer as="ul" $category={categoryColors[category.title]}>
                                 {category.videos.map((video) => (
                                     <VideoItem key={video.id}
-                                    $category={categoryColors[category.title]}>
+                                        $category={categoryColors[category.title]}>
                                         <VideoTitle>{video.title}</VideoTitle>
                                         <Thumbnail
                                             src={video.image}
@@ -161,7 +173,12 @@ const Home = () => {
                                         />
                                         <ButtonContainer>
                                             <Button >Borrar</Button>
-                                            <Button edit>Editar</Button>
+                                            <Button edit onClick={openModal}>Editar</Button>
+                                            <Modal
+                                                showModal={showModal}
+                                                closeModal={closeModal}
+                                                onSubmit={handleFormSubmit}
+                                            />
                                         </ButtonContainer>
                                         {/*  <a
                                             href={video.video}
