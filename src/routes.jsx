@@ -14,7 +14,7 @@ function AppRoutes() {
                 <div>
                     <Routes>
                         <Route index element={<Home />} />
-                        <Route path="/new-video" element={<NewVideo />} />
+                        <Route path="/NewVideo" element={<NewVideo />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </div>

@@ -25,13 +25,13 @@ const CourseContainer = styled.div`
     padding-bottom: 12px;
     scrollbar-width: thick;
     list-style: none;
-    padding: 0;
+    padding: 0 0 23px 0;
     margin: 0;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     ${(props) => props.$category && `
-         scrollbar-color: #e4e0e0 ${props.$category};
+         scrollbar-color: #ffffff ${props.$category};
     `}
 `;
 
@@ -82,6 +82,9 @@ const Button = styled.button`
     background-size: 27px 27px; 
     text-indent: 15px;
     filter: drop-shadow(-2px 3px 1px rgba(0, 0, 0, 0.7));
+    &:hover {
+        opacity: 0.9;
+  }
 `;
 
 const Home = () => {
@@ -138,7 +141,7 @@ const Home = () => {
 
     const handleFormSubmit = (formData) => {
         console.log("Envio de información del formulario: ", formData);
-        // Aquí puedes manejar la lógica para guardar la data del formulario
+        // Manejar la lógica para guardar los datos del formulario del modal
     };
 
 
@@ -180,13 +183,6 @@ const Home = () => {
                                                 onSubmit={handleFormSubmit}
                                             />
                                         </ButtonContainer>
-                                        {/*  <a
-                                            href={video.video}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            Ver video
-                                        </a> */}
                                     </VideoItem>
                                 ))}
                             </CourseContainer>

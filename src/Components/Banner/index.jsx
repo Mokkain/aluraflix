@@ -3,7 +3,7 @@ import React from "react";
 import banner from "../../assets/banner.jpg"
 import CatTitle from "../CatTitle";
 
-const FigureEstilizada = styled.figure`
+const StylizedFigure = styled.figure`
     background-image: ${props => `url(${props.$backgroundImage})`};
     display: flex;
     flex-direction: row-reverse;
@@ -70,13 +70,14 @@ const DescriptionStyles = styled.p`
   font-weight: 500;
   text-align: justify;
   line-height: 1.5;
+  word-break: break-word;
   filter: drop-shadow(4px 3px 6px rgb(0, 0, 0));
 `;
 
 const Banner = React.forwardRef(({title, category, image, video, description}, ref) => {
 
     return (
-        <FigureEstilizada ref={ref} $backgroundImage={banner}>
+        <StylizedFigure ref={ref} $backgroundImage={banner}>
             <Overlay>
                 <DescriptionContainer>
                     <CatTitle category={category}>{category}</CatTitle>
@@ -91,7 +92,7 @@ const Banner = React.forwardRef(({title, category, image, video, description}, r
             <ThumbnailLink href={video} target="_blank" rel="noopener noreferrer">
                 <Thumbnail src={image} alt={title} />
             </ThumbnailLink>
-        </FigureEstilizada>
+        </StylizedFigure>
         );
 });
 

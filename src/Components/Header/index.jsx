@@ -9,6 +9,7 @@ const HeaderContainer = styled.header`
    justify-content: space-between;
    align-items: center;
    background-image: linear-gradient(to right bottom, #26158a, #6db4d0);
+   filter: drop-shadow(4px -3px 8px rgba(0, 0, 0, 0.9));
    img{
     width: 100%;
     height: 100%;
@@ -24,7 +25,7 @@ const Navigation = styled.nav`
         list-style: none;
         display: flex;
         filter: drop-shadow(4px 3px 4px rgba(0, 0, 0, 0.7));
-    }
+}
 `
 const NavLink = styled.li`
     & a{
@@ -38,6 +39,9 @@ const NavLink = styled.li`
         margin-right: 50px;
         background-color: #3b4f8a;
         filter: drop-shadow(4px 3px 4px rgba(0, 0, 0, 0.7));
+        &:hover {
+            opacity: 0.9;
+    }
     }
 `
 

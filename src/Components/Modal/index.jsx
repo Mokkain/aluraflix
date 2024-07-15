@@ -75,7 +75,15 @@ const TextArea = styled.textarea`
     background-color: #f7f6f5;
     color: #000000;
     resize: vertical;
-    scrollbar-color: #e4e0e0 #b43bb6;
+    text-align: justify;
+    line-height: 1.5;
+`;
+
+const ErrorMessage = styled.span`
+  color: red;
+  font-size: 15px;
+  display: block;
+  margin: 9px;
 `;
 
 const ButtonGroup = styled.div`
@@ -92,16 +100,21 @@ const Button = styled.button`
     font-weight: 500;
     background-color: ${props => props.primary ? '#127356' : '#160f70'};
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    &:hover {
+    opacity: 0.8;
+  }
 `;
 
 const Modal = ({ showModal, closeModal, onSubmit }) => {
     const [formData, setFormData] = useState({
         title: '',
-        category: 'Lofi',
+        category: '',
         image: '',
         video: '',
         description: ''
     });
+
+    const [error, setError] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -109,10 +122,22 @@ const Modal = ({ showModal, closeModal, onSubmit }) => {
             ...formData,
             [name]: value
         });
+
+        //Clear the error message
+        if (name === 'description' && value.length >= 25) {
+            setError('');
+        }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (formData.description.length < 25) {
+            setError("La descripción debe tener al menos 25 caracteres.");
+            return;
+        }
+        setError("");
+
         onSubmit(formData);
         closeModal();
     };
@@ -133,8 +158,11 @@ const Modal = ({ showModal, closeModal, onSubmit }) => {
                             type="text"
                             id="title"
                             name="title"
+                            minlength="3" maxlength="100"
                             value={formData.title}
                             onChange={handleChange}
+                            required
+                            aria-required="true"
                         />
                     </FormGroup>
                     <FormGroup>
@@ -144,7 +172,10 @@ const Modal = ({ showModal, closeModal, onSubmit }) => {
                             name="category"
                             value={formData.category}
                             onChange={handleChange}
+                            required
+                            aria-required="true"
                         >
+                            <option value="">Seleccione una categoría</option>
                             <option value="Lofi">Lofi</option>
                             <option value="Clásica">Clásica</option>
                             <option value="Sonidos Ambientales">Sonidos Ambientales</option>
@@ -153,21 +184,25 @@ const Modal = ({ showModal, closeModal, onSubmit }) => {
                     <FormGroup>
                         <Label htmlFor="image">Imagen</Label>
                         <Input
-                            type="text"
+                            type="url"
                             id="image"
                             name="image"
                             value={formData.image}
                             onChange={handleChange}
+                            required
+                            aria-required="true"
                         />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="video">Video</Label>
                         <Input
-                            type="text"
+                            type="url"
                             id="video"
                             name="video"
                             value={formData.video}
                             onChange={handleChange}
+                            required
+                            aria-required="true"
                         />
                     </FormGroup>
                     <FormGroup>
@@ -175,16 +210,20 @@ const Modal = ({ showModal, closeModal, onSubmit }) => {
                         <TextArea
                             id="description"
                             name="description"
+                            minlength="25" maxlength="800"
                             rows="7" cols="20"
                             value={formData.description}
                             onChange={handleChange}
+                            required
+                            aria-required="true"
                         />
+                        {error && <ErrorMessage>{error}</ErrorMessage>}
                     </FormGroup>
                     <ButtonGroup>
                         <Button type="submit" primary>Guardar</Button>
                         <Button type="button" onClick={() => setFormData({
                             title: '',
-                            category: 'Lofi',
+                            category: '',
                             image: '',
                             video: '',
                             description: ''

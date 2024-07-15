@@ -1,90 +1,90 @@
 {
-    "categories": [
-        {
-            "id": "Lofi",
-            "title" : "Lofi"
-        },
-        {
-            "id": "Clásica",
-            "title" : "Clásica"
-        },
-        {
-            "id": "SonidosAmbientales",
-            "title" : "Sonidos Ambientales"
-        }
-    ],
-    "videos": [
-        {
-            "id": 1,
-            "title": "Lofi hip hop radio - beats to relax/study to",
-            "category": "Lofi",
-            "image": "https://i.ytimg.com/vi/jfKfPfyJRdk/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD2EFON1LtcckqLkCokLTCzk0l5Jw",
-            "video": "https://www.youtube.com/watch?v=jfKfPfyJRdk",
-            "description": "Thank you for listening, I hope you will have a good time here"
-        },
-        {
-            "id": 2,
-            "title": "Chill study live stream - pomodoro timer | 25min focus blocks",
-            "category": "Lofi",
-            "image": "https://i.ytimg.com/vi/qH3fETPsqXU/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAdzJshev3rxxtBgZOTVVN0q2EVxg",
-            "video": "https://www.youtube.com/live/azV9PMW5-Ro",
-            "description": "Welcome to the new study stream! Study productively with Taiki by following the Pomodoro Technique to effectively manage your time  :)"
-        },
-        {
-            "id": 3,
-            "title": "Rainy Night ~ Lofi Coffee ~ Lofi Music deep focus to [ Study-Work ]  ",
-            "category": "Lofi",
-            "image": "https://i.ytimg.com/vi/YA2-IcVasqQ/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLC0-pD5G3RXhooAKNNUUSns0GQh4g",
-            "video": "https://www.youtube.com/watch?v=YA2-IcVasqQ",
-            "description": "As raindrops patter gently against the windowpanes, seek refuge in the cozy sanctuary of Lofi Coffee..."
-        },
-        {
-            "id": 4,
-            "title": "Música clásica tranquila | Bach, Mozart, Vivaldi...",
-            "category": "Clásica",
-            "image": "https://i.ytimg.com/vi/ElWSdcg67RY/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLC1TfS-dHfdq7sMobyBxJmnd9Aiyw",
-            "video": "https://www.youtube.com/watch?v=ElWSdcg67RY",
-            "description": "Esperamos que estas piezas de música clásica hagan que sus noches de verano sean más agradables y le devuelvan una sensación de paz interior y calma."
-        },
-        {
-            "id": 5,
-            "title": "Erik Satie - Gymnopédies & Gnossiennes",
-            "category": "Clásica",
-            "image": "https://i.ytimg.com/vi/wnacdOIoTBQ/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAKLRb0qwxItTY_xpy1qFZvoL-X7g",
-            "video": "https://www.youtube.com/watch?v=wnacdOIoTBQ",
-            "description": "These short, atmospheric pieces are written in 3/4 time, with each sharing a common theme and structure."
-        },
-        {
-            "id": 6,
-            "title": "Piano Background Music, Study and Work Music, Cafe Music",
-            "category": "Clásica",
-            "image": "https://i.ytimg.com/vi/fgWy5sMlc9Q/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAnHJkQRudBZMAPaK_mXXBrZPc_pg",
-            "video": "https://www.youtube.com/watch?v=fgWy5sMlc9Q",
-            "description": "Música de fondo al estudiar, al trabajar, música de fondo de cafetería, calma, naturaleza."
-        },
-        {
-            "id": 7,
-            "title": "Sonidos de Lluvia y Truenos: Sonidos de la Naturaleza para Dormir, Relajarse, Estudiar",
-            "category": "Sonidos Ambientales",
-            "image": "https://i.ytimg.com/vi/qJvHh-Nk_Ew/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCyhwyjHNd3uxPsTHhBQSkXopSRaw",
-            "video": "https://www.youtube.com/watch?v=qJvHh-Nk_Ew",
-            "description": "En este video podrás disfrutar de ocho horas de sonido de lluvia relajante con truenos suaves, perfecto para dormir y relajarte."
-        },
-        {
-            "id": 8,
-            "title": "Cozy Tranquil Beach House - Peaceful Beach Waves & Soothing Fireplace",
-            "category": "Sonidos Ambientales",
-            "image": "https://i.ytimg.com/vi/3xT0mfQCf5Q/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBV-9-ClRF6WVI7L99XF7rITJjdRQ",
-            "video": "https://www.youtube.com/watch?v=3xT0mfQCf5Q",
-            "description": "Imagine yourself in a cozy coffee shop by the coast, the rhythmic waves lapping at the shore and the gentle patter of rain providing a calming background."
-        },
-        {
-            "id": 9,
-            "title": "Lakeside Ambience - Crackling Fire, Crickets, Winds and Distant Thunder",
-            "category": "Sonidos Ambientales",
-            "image": "https://i.ytimg.com/vi/n9oCw0w5yPY/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLC_Cv_ZQBW1Ie_fmGMeXxGGBRpKGg",
-            "video": "https://www.youtube.com/watch?v=n9oCw0w5yPY",
-            "description": "Hope you have a pleasant time. Heal your mind with Golden Hour."
-        }
-   ]
+  "categories": [
+    {
+      "id": "Lofi",
+      "title": "Lofi"
+    },
+    {
+      "id": "Clásica",
+      "title": "Clásica"
+    },
+    {
+      "id": "SonidosAmbientales",
+      "title": "Sonidos Ambientales"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "title": "Lofi hip hop radio - beats to relax/study to",
+      "category": "Lofi",
+      "image": "https://i.ytimg.com/vi/jfKfPfyJRdk/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD2EFON1LtcckqLkCokLTCzk0l5Jw",
+      "video": "https://www.youtube.com/watch?v=jfKfPfyJRdk",
+      "description": "Thank you for listening, I hope you will have a good time here"
+    },
+    {
+      "id": 2,
+      "title": "Chill study live stream - pomodoro timer | 25min focus blocks",
+      "category": "Lofi",
+      "image": "https://i.ytimg.com/vi/qH3fETPsqXU/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAdzJshev3rxxtBgZOTVVN0q2EVxg",
+      "video": "https://www.youtube.com/live/azV9PMW5-Ro",
+      "description": "Welcome to the new study stream! Study productively with Taiki by following the Pomodoro Technique to effectively manage your time  :)"
+    },
+    {
+      "id": 3,
+      "title": "Rainy Night ~ Lofi Coffee ~ Lofi Music deep focus to [ Study-Work ]  ",
+      "category": "Lofi",
+      "image": "https://i.ytimg.com/vi/YA2-IcVasqQ/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLC0-pD5G3RXhooAKNNUUSns0GQh4g",
+      "video": "https://www.youtube.com/watch?v=YA2-IcVasqQ",
+      "description": "As raindrops patter gently against the windowpanes, seek refuge in the cozy sanctuary of Lofi Coffee..."
+    },
+    {
+      "id": 4,
+      "title": "Música clásica tranquila | Bach, Mozart, Vivaldi...",
+      "category": "Clásica",
+      "image": "https://i.ytimg.com/vi/ElWSdcg67RY/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLC1TfS-dHfdq7sMobyBxJmnd9Aiyw",
+      "video": "https://www.youtube.com/watch?v=ElWSdcg67RY",
+      "description": "Esperamos que estas piezas de música clásica hagan que sus noches de verano sean más agradables y le devuelvan una sensación de paz interior y calma."
+    },
+    {
+      "id": 5,
+      "title": "Erik Satie - Gymnopédies & Gnossiennes",
+      "category": "Clásica",
+      "image": "https://i.ytimg.com/vi/wnacdOIoTBQ/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAKLRb0qwxItTY_xpy1qFZvoL-X7g",
+      "video": "https://www.youtube.com/watch?v=wnacdOIoTBQ",
+      "description": "These short, atmospheric pieces are written in 3/4 time, with each sharing a common theme and structure."
+    },
+    {
+      "id": 6,
+      "title": "Piano Background Music, Study and Work Music, Cafe Music",
+      "category": "Clásica",
+      "image": "https://i.ytimg.com/vi/fgWy5sMlc9Q/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAnHJkQRudBZMAPaK_mXXBrZPc_pg",
+      "video": "https://www.youtube.com/watch?v=fgWy5sMlc9Q",
+      "description": "Música de fondo al estudiar, al trabajar, música de fondo de cafetería, calma, naturaleza."
+    },
+    {
+      "id": 7,
+      "title": "Sonidos de Lluvia y Truenos: Sonidos de la Naturaleza para Dormir, Relajarse, Estudiar",
+      "category": "Sonidos Ambientales",
+      "image": "https://i.ytimg.com/vi/qJvHh-Nk_Ew/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCyhwyjHNd3uxPsTHhBQSkXopSRaw",
+      "video": "https://www.youtube.com/watch?v=qJvHh-Nk_Ew",
+      "description": "En este video podrás disfrutar de ocho horas de sonido de lluvia relajante con truenos suaves, perfecto para dormir y relajarte."
+    },
+    {
+      "id": 8,
+      "title": "Cozy Tranquil Beach House - Peaceful Beach Waves & Soothing Fireplace",
+      "category": "Sonidos Ambientales",
+      "image": "https://i.ytimg.com/vi/3xT0mfQCf5Q/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBV-9-ClRF6WVI7L99XF7rITJjdRQ",
+      "video": "https://www.youtube.com/watch?v=3xT0mfQCf5Q",
+      "description": "Imagine yourself in a cozy coffee shop by the coast, the rhythmic waves lapping at the shore and the gentle patter of rain providing a calming background."
+    },
+    {
+      "id": 9,
+      "title": "Lakeside Ambience - Crackling Fire, Crickets, Winds and Distant Thunder",
+      "category": "Sonidos Ambientales",
+      "image": "https://i.ytimg.com/vi/n9oCw0w5yPY/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLC_Cv_ZQBW1Ie_fmGMeXxGGBRpKGg",
+      "video": "https://www.youtube.com/watch?v=n9oCw0w5yPY",
+      "description": "Hope you have a pleasant time. Heal your mind with Golden Hour."
+    }
+  ]
 }

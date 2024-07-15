@@ -16,4 +16,14 @@ export const getVideos = async () => {
     }
 };
 
+export const createVideo = async (videoData) => {
+    try {
+        const response = await api.post("/videos", videoData);
+        return response.data;
+    } catch (error) {
+        console.error("Error al crear un nuevo video", error);
+        throw error;
+    }
+};
+
 export default api;
