@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { updateVideo } from '../../Services/api';
 
 const ModalOverlay = styled.div`
     position: fixed;
@@ -98,23 +99,21 @@ const Button = styled.button`
     cursor: pointer;
     color: white;
     font-weight: 500;
-    background-color: ${props => props.primary ? '#127356' : '#160f70'};
+    background-color: ${(props) => props.$primary ? '#127356' : '#160f70'};
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     &:hover {
     opacity: 0.8;
   }
 `;
 
-const Modal = ({ showModal, closeModal, onSubmit }) => {
-    const [formData, setFormData] = useState({
-        title: '',
-        category: '',
-        image: '',
-        video: '',
-        description: ''
-    });
+const Modal = ({ showModal, closeModal, onSubmit, videosData }) => {
 
+    const [formData, setFormData] = useState(videosData);
     const [error, setError] = useState('');
+
+    useEffect(() => {
+        setFormData(videosData);
+    }, [videosData]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -129,17 +128,31 @@ const Modal = ({ showModal, closeModal, onSubmit }) => {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const videoData = {
+            id: formData.id, 
+            title: formData.title,
+            description: formData.description,
+            image: formData.image,
+            video: formData.video,
+            category: formData.category,
+        };
 
         if (formData.description.length < 25) {
             setError("La descripción debe tener al menos 25 caracteres.");
             return;
         }
         setError("");
+        try {
+            await updateVideo(videoData);
+            console.log("Video actualizado exitosamente");
+            onSubmit(videoData);
 
-        onSubmit(formData);
-        closeModal();
+        } catch (error) {
+            console.error('Error al actualizar un video nuevo:', error);
+        }
     };
 
     if (!showModal) {
@@ -158,7 +171,7 @@ const Modal = ({ showModal, closeModal, onSubmit }) => {
                             type="text"
                             id="title"
                             name="title"
-                            minlength="3" maxlength="100"
+                            minLength="3" maxLength="100"
                             value={formData.title}
                             onChange={handleChange}
                             required
@@ -210,7 +223,7 @@ const Modal = ({ showModal, closeModal, onSubmit }) => {
                         <TextArea
                             id="description"
                             name="description"
-                            minlength="25" maxlength="800"
+                            minLength="25" maxLength="800"
                             rows="7" cols="20"
                             value={formData.description}
                             onChange={handleChange}
@@ -220,7 +233,7 @@ const Modal = ({ showModal, closeModal, onSubmit }) => {
                         {error && <ErrorMessage>{error}</ErrorMessage>}
                     </FormGroup>
                     <ButtonGroup>
-                        <Button type="submit" primary>Guardar</Button>
+                        <Button type="submit" $primary>Guardar</Button>
                         <Button type="button" onClick={() => setFormData({
                             title: '',
                             category: '',
@@ -236,3 +249,4 @@ const Modal = ({ showModal, closeModal, onSubmit }) => {
 };
 
 export default Modal;
+

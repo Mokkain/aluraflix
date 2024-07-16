@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Banner from "../Components/Banner";
-import { getVideos } from "../Services/api.jsx";
+import { getVideos, updateVideo, deleteVideo } from "../Services/api.jsx";
 import { getCategories } from "../Services/apiCategories.jsx";
 import styled from "styled-components";
 import CatTitle from "../Components/CatTitle/index.jsx";
@@ -22,12 +22,10 @@ const CourseContainer = styled.div`
     display: flex;
     overflow-x: auto;
     gap: 30px;
-    padding-bottom: 12px;
     scrollbar-width: thick;
     list-style: none;
-    padding: 0 0 23px 0;
+    padding: 0 12px 23px 0;
     margin: 0;
-    display: flex;
     flex-wrap: nowrap;
     align-items: center;
     ${(props) => props.$category && `
@@ -75,8 +73,8 @@ const Button = styled.button`
     border-radius: 5px;
     cursor: pointer;
     color: white;
-    background-color: ${props => (props.edit ? "#3514a3" : "#b91690")};
-    background-image: url(${props => (props.edit ? editIcon : deleteIcon)});
+    background-color: ${props => (props.$edit ? "#3514a3" : "#b91690")};
+    background-image: url(${props => (props.$edit ? editIcon : deleteIcon)});
     background-repeat: no-repeat;
     background-position: 12px center;;
     background-size: 27px 27px; 
@@ -113,7 +111,7 @@ const Home = () => {
         fetchData();
     }, []);
 
-    if (!videos || !categories) return <p>Cargando...</p>;
+    if (!videos || !categories) return <h1>Cargando...</h1>;
 
     // Handle clicking on thumbnail to move to banner
     const handleClickThumbnail = (video) => {
@@ -136,12 +134,41 @@ const Home = () => {
         };
     });
 
-    const openModal = () => setShowModal(true);
-    const closeModal = () => setShowModal(false);
+    const openModal = (video) => {
+        setVideoSelected(video);
+        setShowModal(true);
+    }
 
-    const handleFormSubmit = (formData) => {
-        console.log("Envio de información del formulario: ", formData);
-        // Manejar la lógica para guardar los datos del formulario del modal
+    const closeModal = () => {
+        setShowModal(false);
+        setVideoSelected(null);
+    }
+
+    const handleFormSubmit = async (videoData) => {
+
+        try {
+            await updateVideo(videoData);
+            const updatedVideos = videos.map(video =>
+                video.id === videoData.id ? videoData : video
+            );
+            setVideos(updatedVideos);
+            closeModal();
+        } catch (error) {
+            console.error('Error al actualizar el video', error);
+        }
+    };
+
+    const handleDeleteVideo = async (videoData) => {
+
+        try {
+            await deleteVideo(videoData);
+
+            const deleteVideos = videos.filter((video) => video.id !== videoData.id);
+
+            setVideos(deleteVideos);
+        } catch (error) {
+            console.error('Error al eliminar el video', error);
+        }
     };
 
 
@@ -175,13 +202,16 @@ const Home = () => {
                                             onClick={() => handleClickThumbnail(video)}
                                         />
                                         <ButtonContainer>
-                                            <Button >Borrar</Button>
-                                            <Button edit onClick={openModal}>Editar</Button>
-                                            <Modal
-                                                showModal={showModal}
-                                                closeModal={closeModal}
-                                                onSubmit={handleFormSubmit}
-                                            />
+                                            <Button onClick={() => handleDeleteVideo(video)}>Borrar</Button>
+                                            <Button $edit onClick={() => openModal(video)}>Editar</Button>
+                                            {showModal && (
+                                                <Modal
+                                                    showModal={showModal}
+                                                    closeModal={closeModal}
+                                                    onSubmit={handleFormSubmit}
+                                                    videosData={videoSelected}
+                                                />
+                                            )}
                                         </ButtonContainer>
                                     </VideoItem>
                                 ))}
