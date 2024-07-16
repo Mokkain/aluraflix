@@ -22,7 +22,7 @@ const TitleStyles = styled.h2`
 };
 
 const CatTitle = ({children, category }) => {
-    const color = categoryColors[category] || "#1b091d"; // Default color if category not found
+    const color = categoryColors[category] || "#1b091d"; 
     return <TitleStyles $color={color}>{children}</TitleStyles>;
 };
 
